@@ -1,0 +1,7 @@
+runner = "qemu-system-riscv64 -machine virt -nographic -bios none -kernel "
+
+[build]
+target = "riscv64gc-unknown-none-elf" 
+rustc = "/Users/awmann/smooth/firv-explore/firv-rust/build/host/stage1/bin/rustc"
+linker = "riscv64-unknown-elf-ld"
+rustflags = "-Clink-arg=-Tres/rv64-virt/rust-link.ld -Clinker=riscv64-unknown-elf-ld -O -Cpanic=abort -Coverflow-checks=off "
